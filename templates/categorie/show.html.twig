@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des catégories{% endblock %}
+
+{% block body %}
+{% include 'inc/navbar.html.twig' %}
+
+<div id="layoutSidenav">
+    <!-- Inclure la sidebar -->
+    {% include 'inc/sidebar.html.twig' %}
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Liste des catégories</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Catégories</li>
+                </ol>
+
+                {% extends 'base.html.twig' %}
+
+{% block title %}Liste des catégories{% endblock %}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for categories in categorie %}
+            <tr>
+                <td>{{ categories.id }}</td>
+                <td>{{ categories.nom }}</td>
+                <td>{{ categories.description }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+            </div>
+        </main>
+
+        <!-- Inclure le footer -->
+        {% include 'inc/footer.html.twig' %}
+    </div>
+</div>
+{% endblock %}
